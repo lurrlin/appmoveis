@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main); /// constraint, button e Textview
         TextView tv = findViewById(R.id.text);
-        tv.setText("melao");
+        tv.setText("melao2");
         Button btn = findViewById(R.id.button);
         btn.setText("ta doce?");
         btn.setOnClickListener(v -> {
