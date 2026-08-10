@@ -1,0 +1,64 @@
+[33mcommit 834ce1620a2698652ab386b6d3d8ec4eb61ec6d0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: ddm 1008 <lucas.b29@aluno.ifsc.edu.br>
+Date:   Mon Aug 10 19:21:57 2026 -0300
+
+    so pra ver se sabe
+
+ arquivo.txt | 2 [32m++[m
+ 1 file changed, 2 insertions(+)
+
+[33mcommit 955a4be0bdf38ab621fb2853fc3b106c7c574915[m
+Author: Murilo Branco <murilo.b08@aluno.ifsc.edu.br>
+Date:   Mon Aug 3 21:58:08 2026 -0300
+
+    ft(1): Primeiro commit (conta cliques)
+
+ .gitignore                                         |  15 [32m++[m
+ .idea/.gitignore                                   |   0
+ .idea/.name                                        |   1 [32m+[m
+ .idea/AndroidProjectSystem.xml                     |   6 [32m+[m
+ .idea/compiler.xml                                 |   6 [32m+[m
+ .idea/deploymentTargetSelector.xml                 |  11 [32m+[m
+ .idea/deviceManager.xml                            |  13 [32m++[m
+ .idea/gradle.xml                                   |  17 [32m++[m
+ .idea/misc.xml                                     |  10 [32m+[m
+ .idea/runConfigurations.xml                        |  17 [32m++[m
+ .idea/vcs.xml                                      |   6 [32m+[m
+ app/.gitignore                                     |   1 [32m+[m
+ app/build.gradle.kts                               |  44 [32m++++[m
+ .../java/com/ifsc/app/ExampleInstrumentedTest.java |  26 [32m+++[m
+ app/src/main/AndroidManifest.xml                   |  28 [32m+++[m
+ app/src/main/java/com/ifsc/app/MainActivity.java   |  36 [32m+++[m
+ app/src/main/keepRules/rules.keep                  |  12 [32m+[m
+ .../main/res/drawable/ic_launcher_background.xml   | 170 [32m++++++++++++++[m
+ .../main/res/drawable/ic_launcher_foreground.xml   |  30 [32m+++[m
+ app/src/main/res/layout/activity_main.xml          |  35 [32m+++[m
+ app/src/main/res/mipmap-anydpi/ic_launcher.xml     |   6 [32m+[m
+ .../main/res/mipmap-anydpi/ic_launcher_round.xml   |   6 [32m+[m
+ app/src/main/res/mipmap-hdpi/ic_launcher.webp      | Bin [31m0[m -> [32m1404[m bytes
+ .../main/res/mipmap-hdpi/ic_launcher_round.webp    | Bin [31m0[m -> [32m2898[m bytes
+ app/src/main/res/mipmap-mdpi/ic_launcher.webp      | Bin [31m0[m -> [32m982[m bytes
+ .../main/res/mipmap-mdpi/ic_launcher_round.webp    | Bin [31m0[m -> [32m1772[m bytes
+ app/src/main/res/mipmap-xhdpi/ic_launcher.webp     | Bin [31m0[m -> [32m1900[m bytes
+ .../main/res/mipmap-xhdpi/ic_launcher_round.webp   | Bin [31m0[m -> [32m3918[m bytes
+ app/src/main/res/mipmap-xxhdpi/ic_launcher.webp    | Bin [31m0[m -> [32m2884[m bytes
+ .../main/res/mipmap-xxhdpi/ic_launcher_round.webp  | Bin [31m0[m -> [32m5914[m bytes
+ app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp   | Bin [31m0[m -> [32m3844[m bytes
+ .../main/res/mipmap-xxxhdpi/ic_launcher_round.webp | Bin [31m0[m -> [32m7778[m bytes
+ app/src/main/res/values-night/themes.xml           |   7 [32m+[m
+ app/src/main/res/values/colors.xml                 |   5 [32m+[m
+ app/src/main/res/values/strings.xml                |   3 [32m+[m
+ app/src/main/res/values/themes.xml                 |   9 [32m+[m
+ app/src/main/res/xml/backup_rules.xml              |  13 [32m++[m
+ app/src/main/res/xml/data_extraction_rules.xml     |  19 [32m++[m
+ .../test/java/com/ifsc/app/ExampleUnitTest.java    |  17 [32m++[m
+ build.gradle.kts                                   |   4 [32m+[m
+ gradle.properties                                  |  17 [32m++[m
+ gradle/gradle-daemon-jvm.properties                |  12 [32m+[m
+ gradle/libs.versions.toml                          |  22 [32m++[m
+ gradle/wrapper/gradle-wrapper.jar                  | Bin [31m0[m -> [32m45457[m bytes
+ gradle/wrapper/gradle-wrapper.properties           |   8 [32m+[m
+ gradlew                                            | 251 [32m+++++++++++++++++++++[m
+ gradlew.bat                                        |  94 [32m++++++++[m
+ settings.gradle.kts                                |  26 [32m+++[m
+ 48 files changed, 1003 insertions(+)
