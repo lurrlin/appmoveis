@@ -20,12 +20,12 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main); /// constraint, button e Textview
         TextView tv = findViewById(R.id.text);
-        tv.setText("new Text");
+        tv.setText("melao");
         Button btn = findViewById(R.id.button);
-        btn.setText("Clique aqui");
+        btn.setText("ta doce?");
         btn.setOnClickListener(v -> {
             contador++;
-            tv.setText("Você clicou "  + Integer.toString(contador) + " Vezes");
+            tv.setText("tem "  + Integer.toString(contador) + " risquinho");
         });
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
