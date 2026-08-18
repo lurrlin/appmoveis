@@ -11,25 +11,52 @@
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Olá Mundão perdido!"
-        android:textColor="#FF0000"
-        android:textSize="34sp"
+        android:fontFamily="cursive"
+        android:text="Melão"
+        android:textColor="#F8CF36"
+        android:textSize="37dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.50" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Botão"
+        android:backgroundTint="#282005"
+        android:text="Clique aqui!"
+        android:textColorLink="#A87070"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text"
         app:layout_constraintVertical_bias="0.227" />
+
+    <EditText
+        android:id="@+id/editTextNumberSigned2"
+        android:layout_width="180dp"
+        android:layout_height="53dp"
+        android:ems="10"
+        android:inputType="numberSigned"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberSigned"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/editTextNumberSigned"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumberSigned" />
+
+    <EditText
+        android:id="@+id/editTextNumberSigned"
+        android:layout_width="180dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="132dp"
+        android:ems="10"
+        android:inputType="numberSigned"
+        app:layout_constraintBottom_toTopOf="@+id/text"
+        app:layout_constraintEnd_toStartOf="@+id/editTextNumberSigned2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.298" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

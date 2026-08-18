@@ -17,16 +17,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-
         setContentView(R.layout.activity_main); /// constraint, button e Textview
+
         TextView tv = findViewById(R.id.text);
-        tv.setText("melao");
+        tv.setText("Melão");
+
         Button btn = findViewById(R.id.button);
-        btn.setText("ta doce?");
+        btn.setText("Tem Risquinho?");
+
         btn.setOnClickListener(v -> {
             contador++;
-            tv.setText("tem "  + Integer.toString(contador) + " risquinho");
+            tv.setText("Tem "  + Integer.toString(contador) + " Risquinho");
+            btn.setText("ta doce irmao");
         });
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
