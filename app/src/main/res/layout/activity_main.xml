@@ -34,26 +34,28 @@
         app:layout_constraintVertical_bias="0.227" />
 
     <EditText
-        android:id="@+id/editTextNumberSigned2"
+        android:id="@+id/edMax"
         android:layout_width="180dp"
         android:layout_height="53dp"
         android:ems="10"
+        android:hint="Máximo"
         android:inputType="numberSigned"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberSigned"
+        app:layout_constraintBottom_toBottomOf="@+id/edMin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumberSigned"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumberSigned" />
+        app:layout_constraintStart_toEndOf="@+id/edMin"
+        app:layout_constraintTop_toTopOf="@+id/edMin" />
 
     <EditText
-        android:id="@+id/editTextNumberSigned"
+        android:id="@+id/edMin"
         android:layout_width="180dp"
         android:layout_height="53dp"
         android:layout_marginTop="132dp"
         android:ems="10"
+        android:hint="Minímo"
         android:inputType="numberSigned"
         app:layout_constraintBottom_toTopOf="@+id/text"
-        app:layout_constraintEnd_toStartOf="@+id/editTextNumberSigned2"
+        app:layout_constraintEnd_toStartOf="@+id/edMax"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
