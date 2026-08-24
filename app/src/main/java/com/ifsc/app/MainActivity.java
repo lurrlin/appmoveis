@@ -1,6 +1,7 @@
 package com.ifsc.app;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -78,5 +79,46 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Toast.makeText(this, "onCreate", Toast.LENGTH_LONG).show();
+        Log.d("CiclodaVida", "onCreate");
+
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Toast.makeText(this, "onStart", Toast.LENGTH_LONG).show();
+        Log.d("CiclodaVida", "onStart");
+
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Toast.makeText(this, "onResume", Toast.LENGTH_LONG).show();
+        Log.d("CiclodaVida", "onResume");
+    }
+
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        Toast.makeText(this, "onRestart", Toast.LENGTH_LONG).show();
+        Log.d("CiclodaVida", "onRestart");
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Toast.makeText(this, "onStop", Toast.LENGTH_LONG).show();
+        Log.d("CiclodaVida", "onStop");
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Toast.makeText(this, "onDestroy", Toast.LENGTH_LONG).show();
+        Log.d("CiclodaVida", "onDestroy");
     }
 }
