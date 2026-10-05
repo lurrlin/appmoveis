@@ -32,8 +32,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         });
         SensorManager sm = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         Sensor acs = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        sm.registerListener(this, acs, SensorManager.SENSOR_DELAY_FASTEST);
-        tv.findViewById(R.id.tv1);
+
+        sm.registerListener(this,acs, SensorManager.SENSOR_DELAY_NORMAL);
+        tv=findViewById(R.id.tv1);
     }
 
     @Override
@@ -43,8 +44,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        tv.setText(Float.toString(event.values[0])
-            Float.toString(event.values[1]);
+        tv.setText(Float.toString(event.values[0])+ " : " +
+            Float.toString(event.values[1])+ ": " +
             Float.toString(event.values[2]));
     }
 }
