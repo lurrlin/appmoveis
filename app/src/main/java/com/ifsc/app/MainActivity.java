@@ -3,6 +3,7 @@ package com.ifsc.app;
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -49,7 +50,18 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 "value3 REAL(3,7))");
     }
 
+    public ArrayList<Eventos> getAllEvents() {
+        Cursor cursor = database.rawQuery("SELECT * FROM Eventos LIMIT ?", new String[]{"1000"});
+        cursor.moveToFirst();
 
+        ArrayList<Eventos> result = new ArrayList<>();
+
+        while(!cursor.isAfterLast()){
+            new Eventos(cursor.getInt(0),
+                    new Float[]{cursor.getFloat(1), cursor.getFloat(2), cursor.getFloat(3)});
+        };
+        return result;
+    }
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
