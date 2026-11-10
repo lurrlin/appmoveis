@@ -1,11 +1,8 @@
 package com.ifsc.app;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,112 +10,41 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.util.Random;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main); /// constraint, button e Textview
+        setContentView(R.layout.activity_main);
 
-        EditText edMin = findViewById(R.id.edMin);
-        EditText edMax = findViewById(R.id.edMax);
+        PaintView paintView = findViewById(R.id.paintView);
 
-        TextView tv = findViewById(R.id.text);
-        tv.setText("Melão");
+        Button btnFreehand = findViewById(R.id.btnFreehand);
+        Button btnRectangle = findViewById(R.id.btnRectangle);
+        Button btnCircle = findViewById(R.id.btnCircle);
 
-        Button btn = findViewById(R.id.button);
-        btn.setText("Tem Risquinho?");
+        Button btnColorBlack = findViewById(R.id.btnColorBlack);
+        Button btnColorRed = findViewById(R.id.btnColorRed);
+        Button btnColorBlue = findViewById(R.id.btnColorBlue);
+        Button btnColorGreen = findViewById(R.id.btnColorGreen);
+        Button btnClear = findViewById(R.id.btnClear);
 
-        Random rnd = new Random();
+        btnFreehand.setOnClickListener(v -> paintView.setDrawMode(PaintView.DrawMode.FREEHAND));
+        btnRectangle.setOnClickListener(v -> paintView.setDrawMode(PaintView.DrawMode.RECTANGLE));
+        btnCircle.setOnClickListener(v -> paintView.setDrawMode(PaintView.DrawMode.CIRCLE));
 
-        btn.setOnClickListener(v -> {
+        btnColorBlack.setOnClickListener(v -> paintView.setDrawingColor(Color.BLACK));
+        btnColorRed.setOnClickListener(v -> paintView.setDrawingColor(Color.RED));
+        btnColorBlue.setOnClickListener(v -> paintView.setDrawingColor(Color.BLUE));
+        btnColorGreen.setOnClickListener(v -> paintView.setDrawingColor(Color.GREEN));
 
-            String Smin = edMin.getText().toString();
-            String Smax = edMax.getText().toString();
-
-            if(Smin.isEmpty()){
-                edMin.setError("Informe um Inteiro");
-                return;
-            }
-
-            if(Smax.isEmpty()){
-                edMax.setError("Informe um Inteiro");
-                return;
-            }
-
-            int min = Integer.parseInt(Smin);
-            int max = Integer.parseInt(Smax);
-
-            if (max < min) {
-                Toast.makeText(this, "Mínimo deve ser Menor", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            int aleat = rnd.nextInt((max - min) + 1) + min;
-
-            if (aleat == 1) {
-                tv.setText("Tem " + aleat + " Risquinho");
-            } else {
-                tv.setText("Tem " + aleat + " Risquinhos");
-            }
-
-            if(aleat<=15){
-                btn.setText("Podia ta melhor mano...");
-            } else {
-                btn.setText("Ta uma doçura papai!");
-            }
-
-
-        });
+        btnClear.setOnClickListener(v -> paintView.clear());
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-        Toast.makeText(this, "onCreate", Toast.LENGTH_LONG).show();
-        Log.d("CiclodaVida", "onCreate");
-
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Toast.makeText(this, "onStart", Toast.LENGTH_LONG).show();
-        Log.d("CiclodaVida", "onStart");
-
-    }
-
-    @Override
-    protected void onResume(){
-        super.onResume();
-        Toast.makeText(this, "onResume", Toast.LENGTH_LONG).show();
-        Log.d("CiclodaVida", "onResume");
-    }
-
-    @Override
-    protected void onRestart(){
-        super.onRestart();
-        Toast.makeText(this, "onRestart", Toast.LENGTH_LONG).show();
-        Log.d("CiclodaVida", "onRestart");
-    }
-
-    @Override
-    protected void onStop(){
-        super.onStop();
-        Toast.makeText(this, "onStop", Toast.LENGTH_LONG).show();
-        Log.d("CiclodaVida", "onStop");
-    }
-
-    @Override
-    protected void onDestroy(){
-        super.onDestroy();
-        Toast.makeText(this, "onDestroy", Toast.LENGTH_LONG).show();
-        Log.d("CiclodaVida", "onDestroy");
     }
 }

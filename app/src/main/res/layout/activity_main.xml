@@ -7,58 +7,124 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
+    <!-- Top Toolbar / Controls layout -->
+    <LinearLayout
+        android:id="@+id/toolbarLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="cursive"
-        android:text="Melão"
-        android:textColor="#F8CF36"
-        android:textSize="37dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#282005"
-        android:text="Clique aqui!"
-        android:textColorLink="#A87070"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text"
-        app:layout_constraintVertical_bias="0.227" />
-
-    <EditText
-        android:id="@+id/edMax"
-        android:layout_width="180dp"
-        android:layout_height="53dp"
-        android:ems="10"
-        android:hint="Máximo"
-        android:inputType="numberSigned"
-        app:layout_constraintBottom_toBottomOf="@+id/edMin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/edMin"
-        app:layout_constraintTop_toTopOf="@+id/edMin" />
-
-    <EditText
-        android:id="@+id/edMin"
-        android:layout_width="180dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="132dp"
-        android:ems="10"
-        android:hint="Minímo"
-        android:inputType="numberSigned"
-        app:layout_constraintBottom_toTopOf="@+id/text"
-        app:layout_constraintEnd_toStartOf="@+id/edMax"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
+        android:padding="8dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Shape selection buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="3"
+            android:layout_marginBottom="4dp">
+
+            <Button
+                android:id="@+id/btnFreehand"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="2dp"
+                android:text="Livre"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnRectangle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="2dp"
+                android:text="Retângulo"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnCircle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="2dp"
+                android:text="Círculo"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Color selection & Clear buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="5">
+
+            <Button
+                android:id="@+id/btnColorBlack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/black"
+                android:text="Preto"
+                android:textColor="@android:color/white"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnColorRed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:text="Vermelho"
+                android:textColor="@android:color/white"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/btnColorBlue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/holo_blue_dark"
+                android:text="Azul"
+                android:textColor="@android:color/white"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnColorGreen"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/holo_green_dark"
+                android:text="Verde"
+                android:textColor="@android:color/white"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnClear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/darker_gray"
+                android:text="Limpar"
+                android:textColor="@android:color/white"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Custom PaintView -->
+    <com.ifsc.app.PaintView
+        android:id="@+id/paintView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/toolbarLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
